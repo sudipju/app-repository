@@ -1,0 +1,14 @@
+target/
+bin/
+.project
+.classpath
+.settings
+.checkstyle
+*.log
+*.swp
+*/.idea/*
+*.iml
+*/.idea/
+.idea/
+*.versionsBackup
+.mvn/

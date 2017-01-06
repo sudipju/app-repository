@@ -1,0 +1,14 @@
+---
+version: '2'
+services:
+  web:
+    image: 'debian:jessie'
+    command: sleep infinity
+    hostname: debianhost
+
+  db:
+    image: postgres
+    command: sleep infinity
+    hostname: postgreshost
+  
+

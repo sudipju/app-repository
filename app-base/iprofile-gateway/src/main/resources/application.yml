@@ -1,0 +1,23 @@
+server.port: 8560
+
+security:
+  basic:
+    enabled: false
+    
+zuul:
+  routes:
+    uaa:
+      path: /uaa/**
+      url: http://localhost:8080/uaa/
+   
+    iprofile-asset-manager:
+      path: /asset/**
+      url: http://localhost:8480/asset/
+      sensitive-headers: Cookie, Set-Cookie
+        
+      
+    
+---
+
+spring:
+  profiles: cloud 

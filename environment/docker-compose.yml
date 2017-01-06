@@ -5,10 +5,14 @@ services:
     image: 'debian:jessie'
     command: sleep infinity
     hostname: debianhost
+    environment:
+      TERM: xterm
 
-  db:
-    image: postgres
-    command: sleep infinity
-    hostname: postgreshost
-  
-
+  postgres:
+    container_name: "postgres-container-db"
+    image: "postgres:9.6.1"
+    ports:
+     - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      TERM: xterm

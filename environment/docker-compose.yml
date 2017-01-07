@@ -1,23 +1,23 @@
 ---
 version: '2'
 services:
-  web:
-    image: 'debian:jessie'
-    command: sleep infinity
-    hostname: debianhost
-    environment:
-      TERM: xterm
+#  web:
+#    image: 'debian:jessie'
+#    command: sleep infinity
+#    hostname: debianhost
+#    environment:
+#      TERM: xterm
 
-  neo4j:
-   container_name: "neo4j-container-db"
-   image: "neo4j:3.1.0"
-   ports:
-    - "7474:7474"
-    - "7687:7687"
-   volumes:
-    - ./data/neo4j:/data
-   environment:
-     NEO4J_AUTH: "none"
+#  neo4j:
+#   container_name: "neo4j-container-db"
+#   image: "neo4j:3.1.0"
+#   ports:
+#    - "7474:7474"
+#    - "7687:7687"
+#   volumes:
+#    - ./data/neo4j:/data
+#   environment:
+#     NEO4J_AUTH: "none"
 
   postgres:
     container_name: "postgres-container-db"
@@ -36,6 +36,8 @@ services:
     image: "hortonworks/cloudbreak-uaa:2.7.1"
     ports:
      - "7070:8080"
+    volumes:
+     - ./docker-cloudbreak-uaa/uaa:/uaa
     environment:
       DB_PORT_5432_TCP_ADDR: "postgres-container-db"
       DB_PORT_5432_TCP_PORT: "5432"

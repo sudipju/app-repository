@@ -8,6 +8,17 @@ services:
     environment:
       TERM: xterm
 
+  neo4j:
+   container_name: "neo4j-container-db"
+   image: "neo4j:3.1.0"
+   ports:
+    - "7474:7474"
+    - "7687:7687"
+   volumes:
+    - ./data/neo4j:/data
+   environment:
+     NEO4J_AUTH: "none"
+
   postgres:
     container_name: "postgres-container-db"
     image: "postgres:9.6.1"

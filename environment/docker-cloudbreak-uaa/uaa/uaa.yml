@@ -1,5 +1,16 @@
 spring_profiles: postgresql
 
+zones:
+  internal:
+    hostnames:
+      - <public ipv4_address of host>
+
+uaa.url: http://<public ipv4_address of host>:<port>
+
+login.url: http://<public ipv4_address of host>:<port>
+
+issuer.uri: http://<public ipv4_address of host>:<port>
+
 database:
   driverClassName: org.postgresql.Driver
   url: jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/${DB_ENV_DB:postgres}
